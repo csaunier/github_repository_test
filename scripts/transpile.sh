@@ -12,7 +12,7 @@ echo -e "\e[92m-> Done\e[0m"
 echo -e "\e[1;94m# - Build commonjs components library\e[0m"
 
 NODE_ENV=commonjs \
-npx babel \
+./node_modules/.bin/babel \
     src/components \
     --out-dir dist/lib \
     --copy-files \
@@ -24,7 +24,7 @@ echo -e "\e[92m-> Done\e[0m"
 echo -e "\e[1;94m#- Build es6 components library\e[0m"
 
 NODE_ENV=esm \
-npx babel \
+./node_modules/.bin/babel \
     src/components \
     --out-dir dist/module \
     --copy-files \
