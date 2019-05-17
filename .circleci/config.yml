@@ -17,8 +17,8 @@ jobs:
 
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies-
+            - ${CACHE_VERSION}-dependencies-{{ checksum "package.json" }}
+            - ${CACHE_VERSION}-dependencies-
 
       - run: npm install
       - run:
@@ -28,7 +28,7 @@ jobs:
       - save_cache:
           paths:
             - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+          key: ${CACHE_VERSION}-dependencies-{{ checksum "package.json" }}
 
       - persist_to_workspace:
           root: ~/repo
