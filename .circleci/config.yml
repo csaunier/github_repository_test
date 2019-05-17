@@ -43,8 +43,8 @@ jobs:
           name: Authenticate with registry
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
       - run:
-          name: Bump package.json version by tag version to $CIRCLE_TAG
-          command: npm --no-git-tag-version version $CIRCLE_TAG
+          name: Bump package.json version by tag version to "$CIRCLE_TAG" "{$CIRCLE_TAG}"
+          command: npm --no-git-tag-version version {$CIRCLE_TAG}
       - run:
           name: Publish package
           command: npm publish
