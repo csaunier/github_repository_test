@@ -6,5 +6,10 @@
   font-size: 16px;
   padding: 10px 20px;
   text-transform: uppercase;
-  transition: background 0.2s;
+  transition: all 0.2s;
+}
+
+.button:hover {
+  background: gold;
+  color: darkgreen;
 }

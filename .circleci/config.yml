@@ -44,7 +44,7 @@ jobs:
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
       - run:
           name: Bump package.json version by tag version
-          command: npm --no-git-tag-version version ${CIRCLE_TAG}
+          command: npm version ${CIRCLE_TAG} --no-git-tag-version
       - run:
           name: Publish package
           command: npm publish
